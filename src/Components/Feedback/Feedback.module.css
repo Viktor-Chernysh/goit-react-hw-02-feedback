@@ -1,0 +1,13 @@
+.button {
+  text-transform: capitalize;
+  margin-left: 5px;
+}
+.statistics_item {
+  text-transform: capitalize;
+}
+span {
+  margin-left: 5px;
+}
+p {
+  font-weight: 400;
+}
