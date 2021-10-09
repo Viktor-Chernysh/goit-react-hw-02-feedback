@@ -1,22 +1,30 @@
 import s from './Feedback.module.css';
+import PropTypes from 'prop-types';
+
 function Statistics(props) {
-  const array = Object.keys(props.state);
+  const { state, total, posFeedback } = props;
+  const stateFieldsArr = Object.keys(state);
   return (
     <>
-      {array.map(ar => {
+      {stateFieldsArr.map(el => {
         return (
-          <p className={s.statistics_item} key={ar}>
-            {ar}:<span>{props.state[ar]}</span>
+          <p className={s.statistics_item} key={el}>
+            {el}:<span>{state[el]}</span>
           </p>
         );
       })}
       <p>
-        Total:<span>{props.total}</span>
+        Total:<span>{total}</span>
       </p>
       <p>
-        Positive feedback:<span>{props.posFeedback}%</span>
+        Positive feedback:<span>{posFeedback}%</span>
       </p>
     </>
   );
 }
 export default Statistics;
+Statistics.propTypes = {
+  state: PropTypes.object,
+  total: PropTypes.number.isRequired,
+  posFeedback: PropTypes.number.isRequired,
+};

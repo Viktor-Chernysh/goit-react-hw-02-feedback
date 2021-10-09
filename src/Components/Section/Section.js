@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
 import s from './Section.module.css';
 function Section(props) {
+  const { title, children } = props;
   return (
     <section className={s.section}>
-      <h2>{props.title}</h2>
-      {props.children}
+      <h2>{title}</h2>
+      {children}
     </section>
   );
 }
