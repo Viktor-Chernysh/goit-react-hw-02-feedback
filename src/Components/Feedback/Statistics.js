@@ -2,17 +2,18 @@ import s from './Feedback.module.css';
 import PropTypes from 'prop-types';
 
 function Statistics(props) {
-  const { state, total, posFeedback } = props;
-  const stateFieldsArr = Object.keys(state);
+  const { good, neutral, bad, total, posFeedback } = props;
   return (
     <>
-      {stateFieldsArr.map(el => {
-        return (
-          <p className={s.statistics_item} key={el}>
-            {el}:<span>{state[el]}</span>
-          </p>
-        );
-      })}
+      <p className={s.statistics_item}>
+        Good:<span>{good}</span>
+      </p>
+      <p className={s.statistics_item}>
+        Neutral:<span>{neutral}</span>
+      </p>
+      <p className={s.statistics_item}>
+        Bad:<span>{bad}</span>
+      </p>
       <p>
         Total:<span>{total}</span>
       </p>
